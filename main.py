@@ -12,7 +12,12 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-  if message.content.startswith('$hello'):
-    await message.channel.send('Hello!')
+  if message.content.startswith('$test'):
+    await message.channel.send('Tiago é uma bicha!')
+
+  if message.content.startswith('$respleave'):
+    text = message.content
+    text = text.replace('$respleave','')
+    await message.channel.send('Respawn'+text+' livre')
 
 client.run(os.getenv('TOKEN'))
